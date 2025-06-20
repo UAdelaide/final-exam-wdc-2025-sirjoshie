@@ -137,8 +137,6 @@ let db;
          5);
       `);
     }
-
-    console.log('Database setup complete.');
   } catch (err) {
     console.error('Error setting up database. ', err);
   }
