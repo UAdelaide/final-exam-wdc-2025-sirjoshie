@@ -30,7 +30,7 @@ router.get('/walkrequests/open', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch open walk requests' });
+    res.status(500).json({ error: 'Failed to get open walk requests' });
   }
 });
 
@@ -54,7 +54,7 @@ router.get('/walkers/summary', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch walkers summaries' });
+    res.status(500).json({ error: 'Failed to get walkers summaries' });
   }
 });
 
