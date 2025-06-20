@@ -19,7 +19,6 @@ router.get('/dogs', async (req, res) => {
   }
 });
 
-// /api/walkrequests/open
 router.get('/walkrequests/open', async (req, res) => {
   try {
     const [rows] = await req.db.query(`
