@@ -55,7 +55,7 @@ router.get('/walkers/summary', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch walker summary' });
+    res.status(500).json({ error: 'Failed to fetch walkers summaries' });
   }
 });
 
