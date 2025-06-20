@@ -97,10 +97,8 @@ let db;
       );
     `);
 
-    // Insert seed data only if Users table is empty
     const [userRows] = await db.query('SELECT COUNT(*) AS count FROM Users');
     if (userRows[0].count === 0) {
-      console.log('📥 Inserting test data...');
       await db.query(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
