@@ -18,18 +18,15 @@ let db;
 
 (async () => {
   try {
-    // Connect without selecting a DB
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: ''
     });
 
-    // Create database
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
 
-    // Connect to the new database
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
@@ -37,7 +34,6 @@ let db;
       database: 'DogWalkService'
     });
 
-    // Create tables
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
