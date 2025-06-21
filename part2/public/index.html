@@ -52,8 +52,10 @@
               })
             });
 
+            // Parse JSON response
             const data = await res.json();
 
+            // If login failed, show error
             if (!res.ok) {
               this.error = data.error || 'Login failed';
               return;
