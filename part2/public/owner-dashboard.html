@@ -122,6 +122,19 @@
           }
         }
 
+        const myDogs = ref([]);
+
+        async function loadMyDogs() {
+          try {
+            const res = await fetch('/api/users/mydogs');
+            if (!res.ok) throw new Error('Failed to fetch dogs');
+            myDogs.value = await res.json();
+          } catch (err) {
+            error.value = 'Could not load dogs.';
+          }
+        }
+
+
         onMounted(() => {
           loadWalks();
         });
