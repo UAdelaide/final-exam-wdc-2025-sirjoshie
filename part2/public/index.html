@@ -61,7 +61,7 @@
               return;
             }
 
-            // If successful, redirect based on user role
+            // If successful redirect to user's role
             if (data.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
             } else if (data.user.role === 'walker') {
