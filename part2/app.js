@@ -6,12 +6,12 @@ const app = express();
 
 // Setup session middleware
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'dog-walk-secret', // Use env or fallback
+  secret: 'dog-walk-secret',
   resave: false,
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    maxAge: 1000 * 60 * 60 * 2 // 2 hours
+    maxAge: 1000 * 60 * 60 * 2
   }
 }));
 
