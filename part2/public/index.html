@@ -44,7 +44,7 @@
             const res = await fetch('/api/users/login', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json' // Ensures JSON format
+                'Content-Type': 'application/json' // Ensures JSON format request body
               },
               body: JSON.stringify({
                 email: this.email,
