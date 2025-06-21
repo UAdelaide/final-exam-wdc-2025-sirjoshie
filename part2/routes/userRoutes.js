@@ -68,10 +68,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
-  if (!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-
   const ownerId = req.session.user.user_id;
 
   try {
