@@ -4,6 +4,17 @@ require('dotenv').config();
 
 const app = express();
 
+// Setup session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'dog-walk-secret', // Use env or fallback
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 2 // 2 hours
+  }
+}));
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
